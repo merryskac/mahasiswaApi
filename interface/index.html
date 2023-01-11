@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Mahasiswa Teknik Informatika UNTAD</title>
+</head>
+<body>
+  <h1>API Mahasiswa Teknik Informatika UNTAD</h1>
+  <p>Anda akan membutuhkan API KEY</p>
+  <form action="/get_key" method="post">
+    <input type="submit" value="Generate API KEY">
+  </form>
+  <h2>Dokumentasi</h2>
+  <h3>Input data baru</h3>
+  <a href="" id="link1"></a>
+  <h3>Data semua mahasiswa</h3>
+  <a href="" id="link2"></a>
+  <h3>Data mahasiswa lulus/belum lulus</h3>
+  <ul>
+    <li>
+      Data mahasiswa lulus <br>
+      <a href="" id="link3">hai</a>
+    </li>
+    <li>Data mahasiswa belum lulus <br>
+    <a href="" id="link4"></a>
+    </li>
+  </ul>
+  <h3>Data mahasiswa berdasarkan NIM</h3>
+  <a href="" id="link5"></a>
+</body>
+<script>
+  const linkInput = document.getElementById('link1')
+  linkInput.innerHTML = window.location.href+"input/:API_KEY";
+  linkInput.setAttribute("href",window.location.href+"input/:API_KEY")
+
+  const linkMhsAll = document.getElementById('link2')
+  linkMhsAll.innerHTML = window.location.href+"mahasiswa"
+  linkMhsAll.setAttribute("href",window.location.href+"mahasiswa")
+
+  const mhsLulus = document.getElementById('link3');
+  mhsLulus.innerHTML=window.location.href+"mahasiswa?lulus=true"
+  mhsLulus.setAttribute("href",window.location.href+"mahasiswa?lulus=true")
+
+  const mhsBelumLulus = document.getElementById('link4');
+  mhsBelumLulus.innerHTML=window.location.href+"mahasiswa?lulus=false"
+  mhsBelumLulus.setAttribute("href",window.location.href+"mahasiswa?lulus=false")
+
+  const mhsNim = document.getElementById('link5');
+  mhsNim.innerHTML=window.location.href+"mahasiswa/:NIM"
+  mhsNim.setAttribute("href",window.location.href+"mahasiswa/f55120034")
+</script>
+</html>
