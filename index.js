@@ -1,11 +1,13 @@
-const express = require('express');
+import { express } from 'express';
 const app = express();
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
+import cors from 'cors'
+import bodyParser from 'body-parser'
+import mongoose from 'mongoose';
+import jwt from 'jsonwebtoken'
 
-require ('dotenv').config()
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 app.use(cors())
 app.use(bodyParser.urlencoded({extended:false}))
