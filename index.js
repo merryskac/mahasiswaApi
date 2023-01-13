@@ -1,14 +1,13 @@
-import express from 'express';
+const express = require('express');
 const app = express();
-import cors from 'cors'
-import bodyParser from 'body-parser'
-import mongoose from 'mongoose';
-import jwt from 'jsonwebtoken'
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
 
-import dotenv from 'dotenv'
+require ('dotenv').config()
 
-dotenv.config()
-
+const PORT = process.env.PORT || 5000
 app.use(cors())
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.json())
@@ -91,10 +90,10 @@ app.post('/inputData',(req,res)=>{
       console.log(res.json({err:err}))
       return
     }
-    res.json({ket: "berhasil diinput",
+    res.json({ket: "berhasil diinput",data:{
   nim: data.nim,
   nama:data.nama,
-  lulus:data.lulus})
+  lulus:data.lulus}})
   })
 })
 
@@ -163,5 +162,5 @@ app.get('/mahasiswa',(req,res)=>{
 })
 
 app.listen(5000,()=>{
-  console.log('server running at port')
+  console.log(`server running at port ${PORT}`)
 })
